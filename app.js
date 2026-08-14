@@ -59,9 +59,10 @@ app.post("/listings/new", async (req, res) => {
   res.redirect("/listings");
 });
 
-app.get("/listings/:id/edit", (req, res) => {
+app.get("/listings/:id/edit", async(req, res) => {
   let { id } = req.params;
-  res.render("listings/edit.ejs", { id });
+  let list = await listing.findOne({ _id: `${id}` });
+  res.render("listings/edit.ejs", { list,id });
 });
 
 app.put("/listings/:id/edit", async (req, res) => {

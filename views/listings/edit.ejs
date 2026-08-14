@@ -8,12 +8,12 @@
 <body>
     <h3>Edit listing</h3>
     <form action="/listings/<%= id %>/edit?_method=PUT" method="post">
-        <input type="text" name="titl" id="title" placeholder="Enter title"><br><br>
-        <textarea type="text" name="desc" id="desc" placeholder="Enter description"></textarea><br><br>
-        <input type="text" name="img" id="img" placeholder="Enter image URL"><br><br>
-        <input type="number" name="pric" id="price" placeholder="Enter price"><br><br>
-        <input type="text" name="loc" id="loc" placeholder="Enter location"><br><br>
-        <input type="text" name="contry" id="country" placeholder="Enter country"><br><br>
+        <input type="text" name="titl" id="title" value="<%= list.title %>"><br><br>
+        <textarea type="text" name="desc" id="desc" placeholder="<%= list.description %>"></textarea><br><br>
+        <input type="text" name="img" id="img" placeholder="Enter image URL" value="<%= list.image %>"><br><br>
+        <input type="number" name="pric" id="price" placeholder="Enter price" value="<%= list.price %>"><br><br>
+        <input type="text" name="loc" id="loc" placeholder="Enter location" value="<%= list.location %>"><br><br>
+        <input type="text" name="contry" id="country" placeholder="Enter country" value="<%= list.country %>"><br><br>
         <button>Edit</button>
     </form>
 </body>
