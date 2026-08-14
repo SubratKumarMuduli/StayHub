@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StayHub</title>
+</head>
+<body>
+    <h3>Welcome to StayHub</h3>
+    <form action="/listings/new" method="get">
+        <button>Create new list</button>
+    </form>
+    <% for(let i=0;i<result.length; i++){ %>
+        <ul>
+            <a href="/listings/<%= result[i]._id %>"><li><%= result[i].title %></li></a>
+        </ul>
+    <% } %>
+</body>
+</html>
