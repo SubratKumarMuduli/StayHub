@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StayHub</title>
-</head>
+<% layout("/layouts/boilerplate") -%>
 <body>
-    <h3>Welcome to StayHub</h3>
-    <form action="/listings/new" method="get">
-        <button>Create new list</button>
-    </form>
-    <% for(let i=0;i<result.length; i++){ %>
-        <ul>
-            <a href="/listings/<%= result[i]._id %>"><li><%= result[i].title %></li></a>
-        </ul>
-    <% } %>
+    <h3>All Listings</h3>
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1">
+        <% for(let i=0;i<result.length; i++){ %>
+            <a href="/listings/<%= result[i]._id %>">
+    <div class="card">
+  <img src="<%= result[i].image %>" class="card-img-top indeximg" alt="listing_image" style="height: 20rem">
+  <div class="card-body">
+    <b><h5 class="card-text"><%= result[i].title %></h5></b>
+    <p class="card-text">&#8377; <%= result[i].price.toLocaleString('en-IN') %> / night</p>
+  </div>
+  </div>
+  </a>
+ <% } %>
+    </div>
 </body>
-</html>

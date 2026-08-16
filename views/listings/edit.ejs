@@ -1,20 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit</title>
-</head>
+<% layout("/layouts/boilerplate") -%>
 <body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
     <h3>Edit listing</h3>
     <form action="/listings/<%= id %>/edit?_method=PUT" method="post">
-        <input type="text" name="titl" id="title" value="<%= list.title %>"><br><br>
-        <textarea type="text" name="desc" id="desc" placeholder="<%= list.description %>"></textarea><br><br>
-        <input type="text" name="img" id="img" placeholder="Enter image URL" value="<%= list.image %>"><br><br>
-        <input type="number" name="pric" id="price" placeholder="Enter price" value="<%= list.price %>"><br><br>
-        <input type="text" name="loc" id="loc" placeholder="Enter location" value="<%= list.location %>"><br><br>
-        <input type="text" name="contry" id="country" placeholder="Enter country" value="<%= list.country %>"><br><br>
-        <button>Edit</button>
+        <div>
+            <label for="title" class="form-label">Edit title :</label>
+        <input type="text" name="titl" id="title" class="form-control" value="<%= list.title %>"><br>
+        </div>
+        <div>
+            <label for="desc" class="form-label">Edit description :</label>
+        <textarea type="text" name="desc" id="desc" class="form-control" placeholder="<%= list.description %>"></textarea><br>
+        </div>
+        <div>
+            <label for="img" class="form-label">Edit image URL</label>
+        <input type="text" name="img" id="img" class="form-control" placeholder="Enter image URL" value="<%= list.image %>"><br>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="pric" class="form-label">Edit price :</label>
+        <input type="number" name="pric" id="price" class="form-control" placeholder="Enter price" value="<%= list.price %>"><br>
+            </div>
+
+        <div class="col-md-8">
+            <label for="contry" class="form-label">Edit country :</label>
+        <input type="text" name="contry" id="country" class="form-control" placeholder="Enter country" value="<%= list.country %>"><br>
+        </div>
+        </div>
+        <div>
+            <label for="loc" class="form-label">Edit location :</label>
+        <input type="text" name="loc" id="loc" class="form-control" placeholder="Enter location" value="<%= list.location %>"><br>
+        </div>
+        
+        <button class="btn btn-dark mt-3">Edit</button>
     </form>
+    </div>
+    </div>
 </body>
-</html>

@@ -1,20 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create</title>
-</head>
+<% layout("/layouts/boilerplate") -%>
 <body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <br>
     <h3>Create a new listing</h3>
     <form action="/listings/new" method="post">
-        <input type="text" name="titl" id="title" placeholder="Enter title"><br><br>
-        <textarea type="text" name="desc" id="desc" placeholder="Enter description"></textarea><br><br>
-        <input type="text" name="img" id="img" placeholder="Enter image URL"><br><br>
-        <input type="number" name="pric" id="price" placeholder="Enter price"><br><br>
-        <input type="text" name="loc" id="loc" placeholder="Enter location"><br><br>
-        <input type="text" name="contry" id="country" placeholder="Enter country"><br><br>
-        <button>Create</button>
+        <div>
+            <label for="title" class="form-label">Title :</label>
+            <input type="text" name="titl" id="title" placeholder="Add a catchy title" class="form-control"><br>
+        </div>
+        <div>
+            <label for="desc" class="form-label">Description :</label>
+        <textarea type="text" name="desc" id="desc" placeholder="Enter description" class="form-control"></textarea><br>
+        </div>
+        <div>
+            <label for="img" class="form-label">Image URL :</label>
+        <input type="text" name="img" id="img" placeholder="Enter image URL" class="form-control"><br>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="price" class="form-label">Price :</label>
+            <input type="number" name="pric" id="price" placeholder="Enter price" class="form-control"><br>
+            </div>
+
+            <div class="col-md-8">
+                <label for="country" class="form-label">Country :</label>
+            <input type="text" name="contry" id="country" placeholder="Enter country" class="form-control"><br>
+            </div>
+        </div>
+        <div>
+            <label for="loc" class="form-label">Location :</label>
+        <input type="text" name="loc" id="loc" placeholder="Enter location" class="form-control"><br>
+        </div>
+        <button class="btn btn-success mt-3">Create</button>
+        <br><br>
     </form>
+</div>
+</div>
 </body>
-</html>
