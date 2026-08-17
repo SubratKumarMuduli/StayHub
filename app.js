@@ -31,7 +31,7 @@ app.listen(3000, () => {
 });
 
 app.get("/", (req, res) => {
-  res.send("root is working");
+  res.send("Hi, I am root");
 });
 
 app.get("/listings", (req, res) => {
