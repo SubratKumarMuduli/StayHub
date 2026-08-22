@@ -1,39 +1,109 @@
 <% layout("/layouts/boilerplate") -%>
 <body>
-    <div class="row mt-3">
-        <div class="col-8 offset-2">
-    <h3>Edit listing</h3>
-    <form action="/listings/<%= id %>/edit?_method=PUT" method="post">
+  <div class="row mt-3">
+    <div class="col-8 offset-2">
+      <h3>Edit listing</h3>
+      <form
+        action="/listings/<%= id %>/edit?_method=PUT"
+        method="post"
+        class="needs-validation"
+        novalidate
+      >
         <div>
-            <label for="title" class="form-label">Edit title :</label>
-        <input type="text" name="titl" id="title" class="form-control" value="<%= list.title %>"><br>
+          <label for="title" class="form-label">Edit title :</label>
+          <input
+            type="text"
+            name="titl"
+            id="title"
+            class="form-control"
+            value="<%= list.title %>"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please enter a valid title.</div>
+          <br />
         </div>
         <div>
-            <label for="desc" class="form-label">Edit description :</label>
-        <textarea type="text" name="desc" id="desc" class="form-control" placeholder="<%= list.description %>"></textarea><br>
+          <label for="desc" class="form-label">Edit description :</label>
+          <textarea
+            type="text"
+            name="desc"
+            id="desc"
+            class="form-control"
+            required
+          >
+<%= list.description %></textarea
+          >
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please enter a valid description.</div>
+          <br />
         </div>
         <div>
-            <label for="img" class="form-label">Edit image URL</label>
-        <input type="text" name="img" id="img" class="form-control" placeholder="Enter image URL" value="<%= list.image %>"><br>
+          <label for="img" class="form-label">Edit image URL</label>
+          <input
+            type="text"
+            name="img"
+            id="img"
+            class="form-control"
+            placeholder="Enter image URL"
+            value="<%= list.image %>"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please choose a image.</div>
+          <br />
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <label for="pric" class="form-label">Edit price :</label>
-        <input type="number" name="pric" id="price" class="form-control" placeholder="Enter price" value="<%= list.price %>"><br>
-            </div>
+          <div class="col-md-4">
+            <label for="pric" class="form-label">Edit price :</label>
+            <input
+              type="number"
+              name="pric"
+              id="price"
+              class="form-control"
+              placeholder="Enter price"
+              value="<%= list.price %>"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please enter a valid price.</div>
+            <br />
+          </div>
 
-        <div class="col-md-8">
+          <div class="col-md-8">
             <label for="contry" class="form-label">Edit country :</label>
-        <input type="text" name="contry" id="country" class="form-control" placeholder="Enter country" value="<%= list.country %>"><br>
-        </div>
+            <input
+              type="text"
+              name="contry"
+              id="country"
+              class="form-control"
+              placeholder="Enter country"
+              value="<%= list.country %>"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please choose a country.</div>
+            <br />
+          </div>
         </div>
         <div>
-            <label for="loc" class="form-label">Edit location :</label>
-        <input type="text" name="loc" id="loc" class="form-control" placeholder="Enter location" value="<%= list.location %>"><br>
+          <label for="loc" class="form-label">Edit location :</label>
+          <input
+            type="text"
+            name="loc"
+            id="loc"
+            class="form-control"
+            placeholder="Enter location"
+            value="<%= list.location %>"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please choose a location.</div>
+          <br />
         </div>
-        
+
         <button class="btn btn-dark mt-3">Edit</button>
-    </form>
+      </form>
     </div>
-    </div>
+  </div>
 </body>
